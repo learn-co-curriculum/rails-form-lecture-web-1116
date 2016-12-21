@@ -1,7 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Faker Gem
+
+10.times do
+  Song.create(title: Faker::Hipster.sentence(rand(1..2)))
+end
+
+10.times do
+  Artist.create(name: Faker::Superhero.name)
+end
+
+music_genres = ["Hip Hop", "Country", "Electronic", "Pop", "Rock", "Classical"]
+
+10.times do
+  Genre.create(name: music_genres[rand(music_genres.length)])
+end
+
+Song.all.each do |song|
+  3.times do
+    artist = Artist.find(rand(1..10))
+    genre = Genre.find(rand(1..10))
+
+    song.artists << artist
+    song.genres << genre
+    song.save
+  end
+end

@@ -1,0 +1,14 @@
+<%= form_for Artist.new, {action:'POST', controller:'song'} do |f| %>
+  <%= f.text_field :field, id: '', class: '' %>
+  <% binding.pry %>
+
+<% end %>
+
+<%= form_tag submission_path, method: :get do %>
+  <%= text_field_tag(
+      :search,
+      params[:search],
+      placeholder: "Search",
+      class: "form-control"
+  ) %>
+<% end %>

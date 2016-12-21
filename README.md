@@ -2,7 +2,16 @@
 
 #### All of the forms!
 
+## Objectives
+
+* Students should know the difference between form_tag and form_for
+* Object builder in form_for
+* Flow of the MVC model
+
 ## Overview:
+
+* Skinny views, fat controllers
+	* Show creating object in view - move to controller
 
 * Show basic forms
 
