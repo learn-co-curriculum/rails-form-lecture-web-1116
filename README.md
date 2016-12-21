@@ -1,24 +1,15 @@
-# README
+# I Can Haz Rails Forms
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### All of the forms!
 
-Things you may want to cover:
+## Overview:
 
-* Ruby version
+* Show basic forms
 
-* System dependencies
+* Move into form_tag
+	* new, create, show, edit, update
+	* Look at the html it is building on the page
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Finally to form_for
+	* new, create, show, edit, update
+	* Look at the html it is building on the page
