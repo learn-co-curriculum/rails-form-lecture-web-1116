@@ -1,11 +1,14 @@
 <h1>Show me the song!</h1>
 
+<h2>Song</h2>
 <%= @song.title %>
 
+<h2>Artists</h2>
 <% @song.artists.each do |artist| %>
-  <%= artist.name %>
+  <p><%= artist.name %></p>
 <% end %>
 
+<h2>Genres</h2>
 <% @song.genres.each do |genre| %>
-  <%= genre.name %>
+  <p><%= genre.name %></p>  
 <% end %>

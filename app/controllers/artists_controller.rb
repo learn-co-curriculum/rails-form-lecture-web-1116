@@ -3,8 +3,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.create(name: params[:artist][:name])
-
+    @artist = Artist.create(name: params[:artist][:name], song_ids: params[:artist][:song_ids])
     redirect_to "/artists/#{@artist.id}"
   end
 
