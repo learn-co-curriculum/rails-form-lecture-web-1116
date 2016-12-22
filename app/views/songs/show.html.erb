@@ -1,2 +1,11 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1>Show me the song!</h1>
+
+<%= @song.title %>
+
+<% @song.artists.each do |artist| %>
+  <%= artist.name %>
+<% end %>
+
+<% @song.genres.each do |genre| %>
+  <%= genre.name %>
+<% end %>

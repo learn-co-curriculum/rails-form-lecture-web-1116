@@ -1,2 +1,6 @@
-<h1>Genres#show</h1>
-<p>Find me in app/views/genres/show.html.erb</p>
+<h1>Show me the Genre!</h1>
+
+<%= @genre.name %>
+<% @genre.songs.each do |song| %>
+  <p><%= song.title %></p>
+<% end %>

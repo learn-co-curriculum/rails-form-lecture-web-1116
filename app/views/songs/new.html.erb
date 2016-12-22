@@ -1,2 +1,19 @@
-<h1>Songs#new</h1>
-<p>Find me in app/views/songs/new.html.erb</p>
+<h1>New Song Page</h1>
+
+<%= form_for Song.new do |f| %>
+  <%= f.label :title %>
+  <%= binding.pry %>
+  <%= f.text_field :title %>
+
+  <p><%= f.label :artists %></p>
+  <%= f.collection_check_boxes :artist_ids, Artist.all, :id, :name do |c| %>
+    <p><%= c.check_box %><%= c.label %></p>
+  <% end %>
+
+  <p><%= f.label :genres %></p>
+  <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name do |c| %>
+    <p><%= c.check_box %><%= c.label %></p>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
