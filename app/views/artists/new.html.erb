@@ -1,0 +1,13 @@
+<h1>New Artist Page</h1>
+
+<form action="/artists/create" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" name="artist[name]" id="artist_name">
+
+  <h2>Songs</h2>
+  <% Song.all.each do |song| %>
+    <p><input type="checkbox" id="<%= song.id %>" value="checkbox_<%= song.id %>"><%= song.title %></p>
+  <% end %>
+
+  <button type="submit" name="button">Submit</button>
+</form>

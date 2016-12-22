@@ -1,2 +1,13 @@
-<h1>Genres#new</h1>
-<p>Find me in app/views/genres/new.html.erb</p>
+<h1>New Genre Page</h1>
+
+<%= form_tag action: 'create', method: :post do %>
+  <%= label_tag 'genre_name' %>
+  <%= text_field_tag 'genre[name]' %>
+
+  <h2><%= label_tag 'songs' %></h2>
+  <% Song.all.each do |song| %>
+    <p><%= check_box_tag 'song[name]', "#{song.title}" %><%= song.title %></p>
+  <% end %>
+
+  <%= submit_tag %>
+<% end %>

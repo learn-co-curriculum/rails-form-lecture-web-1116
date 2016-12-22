@@ -1,2 +1,18 @@
-<h1>Genres#edit</h1>
-<p>Find me in app/views/genres/edit.html.erb</p>
+<h1>New Genre Page</h1>
+
+<%= form_tag({action: :update},{method: :put}) do %>
+
+  <%= label_tag 'genre_name' %>
+  <%= text_field_tag 'genre[name]', @genre.name %>
+
+  <h2><%= label_tag 'songs' %></h2>
+  <% Song.all.each do |song| %>
+    <% if @genre.songs.include?(song) %>
+      <p><%= check_box_tag 'genre[song_ids][]', "#{song.id}", true %><%= song.title %></p>
+    <% else %>
+      <p><%= check_box_tag 'genre[song_ids][]', "#{song.id}" %><%= song.title %></p>
+    <% end %>
+  <% end %>
+
+  <%= submit_tag %>
+<% end %>

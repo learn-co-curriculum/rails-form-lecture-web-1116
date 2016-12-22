@@ -1,0 +1,18 @@
+<h1>Edit Artist Page</h1>
+
+<form action="/artists/<%= @artist.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" name="artist[name]" id="artist_name" value="<%= @artist.name %>">
+
+  <h2>Songs</h2>
+  <% Song.all.each do |song| %>
+    <% if @artist.songs.include?(song) %>
+      <p><input type="checkbox" name="artist[song_ids][]" id="<%= song.id %>" value="<%= song.id %>" checked><%= song.title %></p>
+    <% else %>
+      <p><input type="checkbox" name="artist[song_ids][]" id="<%= song.id %>" value="<%= song.id %>"><%= song.title %></p>
+    <% end %>
+  <% end %>
+
+  <button type="submit" name="button">Submit</button>
+</form>

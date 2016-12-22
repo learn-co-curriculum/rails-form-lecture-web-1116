@@ -1,33 +1,37 @@
 Rails.application.routes.draw do
   get 'genres/new'
 
-  post 'genres/create'
+  post 'genres/:id', to: 'genres#create'
 
-  get 'genres/show'
+  get 'genres/:id', to: 'genres#show'
 
-  get 'genres/edit'
+  get 'genres/:id/edit', to: 'genres#edit'
 
-  patch 'genres/update'
+  patch 'genres/:id', to: 'genres#update'
+
+  put 'genres/:id', to: 'genres#update'
 
   get 'artists/new'
 
-  post 'artists/create'
+  post 'artists', to: 'artists#create'
 
-  get 'artists/show'
+  get 'artists/:id', to: 'artists#show'
 
-  get 'artists/edit'
+  get 'artists/:id/edit', to: 'artists#edit'
 
-  patch 'artists/update'
+  patch 'artists/:id', to: 'artists#update'
 
-  get 'songs/new'
+  resources :songs
 
-  post 'songs/create'
-
-  get 'songs/show'
-
-  get 'songs/edit'
-
-  patch 'songs/update'
+  # get 'songs/new'
+  #
+  # post 'songs/create'
+  #
+  # get 'songs/:id', to: 'songs#show'
+  #
+  # get 'songs/edit'
+  #
+  # patch 'songs/update'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
