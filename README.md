@@ -10,8 +10,8 @@
 
 ## Overview:
 
-* Skinny views, fat controllers
-	* Show creating object in view - move to controller
+* All database interaction in controller
+	* Show creating new object in view - move to controller
 
 * Show basic forms
 
