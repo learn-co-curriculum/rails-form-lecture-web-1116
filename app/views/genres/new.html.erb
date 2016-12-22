@@ -1,1 +1,14 @@
 <h1>New Genre Page</h1>
+
+<%= form_tag("/genres") do %>
+
+  <%= label_tag 'genre_name' %>
+  <%= text_field_tag 'genre[name]' %>
+
+  <% Song.all.each do |song| %>
+    <%= check_box_tag 'genre[songs]', song.id %><%= song.title %>
+  <% end %>
+
+  <%= submit_tag %>
+
+<% end %>

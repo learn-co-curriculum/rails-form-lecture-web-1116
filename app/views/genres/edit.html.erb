@@ -1,1 +1,16 @@
 <h1>Edit a Genre</h1>
+
+<%= form_tag("/genres/#{@genre.id}", method: :patch) do %>
+  <%= label_tag 'genre_name' %>
+  <%= text_field_tag 'genre[name]', @genre.name %>
+
+  <% Song.all.each do |song| %>
+    <% if @genre.songs.include?(song) %>
+      <%= check_box_tag 'genre[songs]', song.id, true %><%= song.title %>
+    <% else %>
+      <%= check_box_tag 'genre[songs]', song.id %><%= song.title %>
+    <% end %>
+  <% end %>
+
+  <%= submit_tag %>
+<% end %>

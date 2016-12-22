@@ -1,1 +1,13 @@
 <h1>Edit a Song</h1>
+
+<%= form_for @song do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.collection_check_boxes(:artist_ids, Artist.all, :id, :name) %>
+
+  <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+
+  <%= f.submit %>
+<% end %>

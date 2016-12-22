@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   post 'songs', to: 'songs#create'
 
-  get 'songs/:id', to: 'songs#show'
+  get 'songs/:id', to: 'songs#show', as: 'song'
 
   get 'songs/:id/edit', to: 'songs#edit'
 
